@@ -1,4 +1,4 @@
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.Random;
 
 public final class Board {
@@ -158,7 +158,7 @@ public final class Board {
      * @return all neighboring boards
      */
     public Iterable<Board> neighbors() {
-        LinkedList<Board> neighbors = new LinkedList<>();
+        ArrayList<Board> neighbors = new ArrayList<>();
         int x0 = (this.zeroPosition)/n;
         int y0 = (this.zeroPosition)%n;
         if (y0 != 0) {

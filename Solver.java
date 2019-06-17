@@ -32,13 +32,8 @@ public class Solver {
 
         try {
             originalBoardThread.join();
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-
-        try {
             twinBoardThread.join();
-        } catch (Exception e) {
+        } catch (InterruptedException e) {
             System.out.println(e);
         }
     }
@@ -72,6 +67,14 @@ public class Solver {
     public void printNumberOfCreatedNodes() {
         System.out.println("Created nodes from original board: " + this.searchResult.getCreatedOriginalBoardNodes());
         System.out.println("Created nodes from twin board: " + this.searchResult.getCreatedTwinBoardNodes());
+    }
+
+    public long createdNodesOriginal() {
+        return this.searchResult.getCreatedOriginalBoardNodes();
+    }
+
+    public long createdNodesTwin() {
+        return this.searchResult.getCreatedTwinBoardNodes();
     }
 
 }
